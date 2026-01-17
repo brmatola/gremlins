@@ -19,7 +19,8 @@ Gremlins is a Claude Code plugin that provides skills (reusable workflows) and a
 ## Installation
 
 ```bash
-claude plugins add github:brmatola/gremlins
+/plugin marketplace add brmatola/gremlins
+/plugin install gremlins@gremlins
 ```
 
 ## Plan Structure
