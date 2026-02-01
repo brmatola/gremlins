@@ -54,6 +54,10 @@ digraph skill_flow {
 | `gremlins:executing-plans` | Working through an implementation plan |
 | `gremlins:plan-complete` | Moving a finished plan to complete/ |
 | `gremlins:plan-archive` | Archiving abandoned or obsolete plans |
+| `gremlins:plan-readiness-review` | Pre-implementation plan verification |
+| `gremlins:implementation-review` | Post-implementation audit before merge |
+| `gremlins:reach-opportunities` | Quick wins after implementation passes |
+| `gremlins:worktree-workflow` | Full development loop orchestration |
 | `gremlins:systematic-debugging` | Any bug, error, or unexpected behavior |
 | `gremlins:test-driven-development` | Writing new functionality |
 | `gremlins:verification-before-completion` | Before claiming work is done |
