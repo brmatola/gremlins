@@ -13,7 +13,7 @@ Orchestrate the full development loop: review → implement → audit → finish
 
 **Announce at start:** "I'm using the worktree-workflow skill to [start/continue] the development workflow."
 
-**State file:** `.claude/workflow-state.json`
+**State file:** `.workflow-state.json` (repo root)
 
 ## Invocation Patterns
 
@@ -55,12 +55,11 @@ audit → [implementation-review] → markdown summary
 ### State File Location
 
 ```bash
-mkdir -p .claude
-# State stored in .claude/workflow-state.json
+# State stored in .workflow-state.json (repo root)
 
 # Ensure state file is gitignored (workflow state is session-specific)
-if ! grep -q "workflow-state.json" .gitignore 2>/dev/null; then
-  echo ".claude/workflow-state.json" >> .gitignore
+if ! grep -q ".workflow-state.json" .gitignore 2>/dev/null; then
+  echo ".workflow-state.json" >> .gitignore
 fi
 ```
 
@@ -82,18 +81,18 @@ fi
 ### Reading State
 
 ```bash
-cat .claude/workflow-state.json 2>/dev/null || echo "No workflow state"
+cat .workflow-state.json 2>/dev/null || echo "No workflow state"
 ```
 
 ### Writing State
 
-Use Write tool to update `.claude/workflow-state.json` after each phase.
+Use Write tool to update `.workflow-state.json` after each phase.
 
 ## The Process
 
 ### On Invocation: Detect Current State
 
-1. Check for `.claude/workflow-state.json`
+1. Check for `.workflow-state.json`
 2. If exists: Resume from recorded phase
 3. If not: Prompt user for plan name to start
 
@@ -276,7 +275,7 @@ git merge "origin/$base_branch" -m "Merge $base_branch into $(git branch --show-
    - State file removed
    - Branch preserved (delete manually if needed)
    ```
-3. Delete `.claude/workflow-state.json`
+3. Delete `.workflow-state.json`
 4. Do NOT delete the branch or commits (user decides)
 
 ## Status Command
