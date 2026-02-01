@@ -2,6 +2,9 @@
   "name": "gremlins",
   "description": "Disciplined engineering workflows for AI-assisted development: TDD, debugging, planning, code review, and more",
   "version": "0.1.0",
+  "commands": [
+    "./commands/worktree.md"
+  ],
   "author": {
     "name": "Brad Matola",
     "email": "brmatola@gmail.com"
